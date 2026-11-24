@@ -1,0 +1,21 @@
+{
+  "name": "backbench",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "postinstall": "node -e \"const f=require('fs');f.mkdirSync('public/vendor',{recursive:true});f.copyFileSync('node_modules/htm/preact/standalone.module.js','public/vendor/preact.js');f.copyFileSync('node_modules/uqr/dist/index.mjs','public/vendor/uqr.js');f.copyFileSync('node_modules/@formkit/auto-animate/index.mjs','public/vendor/auto-animate.js');f.copyFileSync('node_modules/canvas-confetti/dist/confetti.module.mjs','public/vendor/confetti.js')\"",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "@formkit/auto-animate": "0.10.0",
+    "canvas-confetti": "1.9.4",
+    "htm": "^3.1.1",
+    "uqr": "^0.1.3",
+    "wrangler": "^4.164.0"
+  },
+  "dependencies": {
+    "chess.js": "^1.4.0"
+  }
+}
